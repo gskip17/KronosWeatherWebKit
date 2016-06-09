@@ -1,0 +1,7 @@
+{
+  "name": "Weather App",
+  "main": "index.html",
+  "dependencies": {
+    "weather.js":"*"
+  }
+}

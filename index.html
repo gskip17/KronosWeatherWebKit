@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Kronos Weather</title>
+
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Angular-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    <!-- Include the AngularJS routing library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.js"></script>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      //angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+
+  </script>
+  </head>
+  <body ng-app="WeatherApp" ng-view>
+
+    <div class="main" ng-controller="MainController">
+      <!-- Navbar Partial -->
+      <navbar info="title"></navbar>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="page-header">{{title}}
+              <small>Native client for the office weather forecast!</small>
+            </h1>
+          </div>
+        </div>
+        <!--Card row -->
+        <div class="row">
+          <div class="col-md-12">
+            <!--Card-->
+            <div class="col-md-3 cards text-center" ng-repeat="(key, day) in fiveDay">
+              <a href="/day/{{key}}">
+                <card info="day"></card>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <script src="js/mods/nw.js"></script>
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+    <!-- Controlles -->
+    <script src="js/controllers/MainController.js"></script>
+    <!--Services-->
+    <script src="js/services/yahooWeatherService.js"></script>
+    <!-- Directives -->
+    <script src="js/directives/navbar.js"></script>
+    <script src="js/directives/card.js"></script>
+    <!-- Extras -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>
